@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src=https://code.jquery.com/jquery-3.1.1.min.js></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css">
+    <title>Todo</title>
+</head>
+<body>
+    <div class="container mb-5">
+        <h1 class="noselect display-1 text-white text-center font-weight-bold">todos</h1>
+    </div>
+    <div class="container d-flex justify-content-center">
+        <div class="new-todo wid">
+            <form data-bind="submit: addTodo">
+                <input type="text" class="round" placeholder="Enter todo" data-bind="value: task"/>
+            </form>
+            <div class="card mt-5 w-100">
+                <ul class="list-group list-group-flush" data-bind="foreach: todos">
+                      <li class="list-group-item">
+                          <div class="justify-content-between visible" data-bind="css: textV">
+                                <span class="noselect" data-bind="text: task,css: isDone() == true ? 'done' : ''"></span>
+                                <div class="noselect">
+                                  <div class="pretty p-default p-round">
+                                      <input type="checkbox" data-bind="checked: isDone,click: $parent.updateStatus"/>
+                                      <div class="state p-success-o">
+                                          <label></label>
+                                      </div>
+                                  </div>
+                                  <img src="edit.svg" data-bind="hidden: isDone,click: $parent.editMode">
+                                  <img src="delete.svg" data-bind="hidden: isDone,click: $parent.delete">
+                                </div>
+                          </div>
+                          <div class="list-group-item d-flex justify-content-between visible" data-bind="css: inputV">
+                                <input type="text" class="w85" data-bind="value: $parent.taskE">
+                                <img src="cancel.svg" data-bind="click: $parent.ExitEditMode">
+                                <img src="save.svg" data-bind="click: $parent.updateTask">
+                          </div>
+                      </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="https://knockoutjs.com/downloads/knockout-3.5.1.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

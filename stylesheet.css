@@ -1,0 +1,76 @@
+body{
+    background-image:url(bg2.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+img{
+    cursor: pointer;
+}
+
+.hide{
+    display: none !important;
+}
+
+.w85{
+    width: 85%;
+}
+
+.done{
+    color: gray;
+    text-decoration: line-through;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+      -webkit-user-select: none;
+       -khtml-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none;
+  }
+
+.round {
+    width: 100%;
+    border-radius: 15px;
+    border: 1px #000 solid;
+    padding: 5px 5px 5px 25px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+}
+
+.corner {
+    position: absolute;
+    top: 3px;
+    left: 5px;
+    height: 20px;
+    width: 20px;
+    z-index: 10;
+    border-radius: 10px;
+    border: none;
+    background: #000;
+}
+
+.new-todo {
+    position: relative;
+}
+
+.wid{
+    width: 50%;
+}
+
+@media only screen and (max-width: 992px) {
+    .wid{
+        width: 75%;
+    }
+  }
+
+@media only screen and (max-width: 768px) {
+    .wid{
+        width: 100%;
+    }
+  }
