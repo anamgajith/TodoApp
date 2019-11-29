@@ -67,7 +67,7 @@ img{
         width: 75%;
     }
     body{
-        background: #5c86ae;
+        background: url(../bg.svg);
     }
   }
 
